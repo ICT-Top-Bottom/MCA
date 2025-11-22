@@ -4,7 +4,8 @@
       "Bash(mkdir:*)",
       "Bash(python:*)",
       "Bash(py organize_dataset.py:*)",
-      "Bash(py check_missing_labels.py:*)"
+      "Bash(py check_missing_labels.py:*)",
+      "Bash(py batch_inference_advanced.py)"
     ],
     "deny": [],
     "ask": []
