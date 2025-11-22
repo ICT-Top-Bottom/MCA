@@ -3,7 +3,8 @@
     "allow": [
       "Bash(mkdir:*)",
       "Bash(python:*)",
-      "Bash(py organize_dataset.py:*)"
+      "Bash(py organize_dataset.py:*)",
+      "Bash(py check_missing_labels.py:*)"
     ],
     "deny": [],
     "ask": []
