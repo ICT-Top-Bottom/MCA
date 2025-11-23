@@ -7,7 +7,6 @@ MCA/
 ├── data.yaml                      # YOLO11 데이터셋 설정 파일
 ├── inference.py                   # 기본 추론 코드 (단일 이미지)
 ├── inference_advanced.py          # 고급 추론 코드 (TTA 적용)
-├── batch_inference_advanced.py   # 배치 고급 추론 (여러 이미지)
 ├── train/                         # 학습 데이터셋
 │   ├── images/                   # 192개 학습 이미지
 │   └── labels/                   # 191개 학습 라벨
@@ -24,10 +23,10 @@ MCA/
 │   ├── BoxPR_curve.png
 │   └── ... (기타 평가 이미지)
 ├── testImage/                     # 테스트 이미지 폴더
+├── testImageResult                # 테스트 이미지 추론 결과 폴더
 ├── testImageAdvancedResult/       # 고급 추론 결과 폴더
 ├── images/                        # 원본 이미지 (240개)
 ├── labels/                        # 원본 라벨
-└── tests/                         # 테스트 관련 파일
 ```
 
 ## Google Colab에서 불러오기
