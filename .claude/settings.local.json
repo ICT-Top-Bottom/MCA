@@ -5,7 +5,8 @@
       "Bash(python:*)",
       "Bash(py organize_dataset.py:*)",
       "Bash(py check_missing_labels.py:*)",
-      "Bash(py batch_inference_advanced.py)"
+      "Bash(py batch_inference_advanced.py)",
+      "Bash(tree:*)"
     ],
     "deny": [],
     "ask": []

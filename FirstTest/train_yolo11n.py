@@ -72,28 +72,3 @@ print(f"\n최고 성능 모델: runs/train/cart_detection/weights/best.pt")
 print(f"마지막 모델: runs/train/cart_detection/weights/last.pt")
 print(f"\n학습 결과 그래프: runs/train/cart_detection/results.png")
 print(f"혼동 행렬: runs/train/cart_detection/confusion_matrix.png")
-
-# 4. Google Drive에 결과 백업 (선택 사항)
-print("\n" + "="*60)
-print("Google Drive 백업")
-print("="*60)
-
-try:
-    from google.colab import drive
-    print("\nGoogle Drive 마운트 중...")
-    drive.mount('/content/drive')
-
-    print("결과 파일 복사 중...")
-    os.system('mkdir -p /content/drive/MyDrive/MCA_results')
-    os.system('cp -r runs/train/cart_detection /content/drive/MyDrive/MCA_results/')
-
-    print("✅ Google Drive 백업 완료!")
-    print("경로: /content/drive/MyDrive/MCA_results/cart_detection/")
-
-except Exception as e:
-    print(f"⚠️ Google Drive 백업 실패: {e}")
-    print("로컬에만 저장되었습니다.")
-
-print("\n" + "="*60)
-print("모든 작업 완료!")
-print("="*60)
