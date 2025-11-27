@@ -4,7 +4,7 @@
 
 ```
 MCA/
-  ├── FirstTest/                     # 1차 테스트 결과물
+  ├── yolo11n_240/                     # 1차 테스트 결과물 (yolo 11버전, nano모델, 학습이미지240장)
   │   ├── data.yaml
   │   ├── inference.py
   │   ├── inference_advanced.py
