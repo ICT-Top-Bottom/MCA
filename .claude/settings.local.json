@@ -7,7 +7,10 @@
       "Bash(py check_missing_labels.py:*)",
       "Bash(py batch_inference_advanced.py)",
       "Bash(tree:*)",
-      "Bash(py:*)"
+      "Bash(py:*)",
+      "Bash(git checkout:*)",
+      "Bash(__NEW_LINE__ rm images/empty_6.jpg)",
+      "Bash(__NEW_LINE__ rm -rf v2label insImg)"
     ],
     "deny": [],
     "ask": []
