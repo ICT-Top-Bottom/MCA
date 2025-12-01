@@ -1,3 +1,20 @@
 runs/
 *.cache
 yolo11n.pt
+
+# Training datasets
+dataset/
+runs/
+backup_old/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Temporary files
+temp_restore/
+*.tmp
+
+# Old results
+yolo11s_results/
