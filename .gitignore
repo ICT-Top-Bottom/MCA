@@ -18,3 +18,7 @@ temp_restore/
 
 # Old results
 yolo11s_results/
+
+# Image labeling workspace
+labeledImage/
+deleteImage/
