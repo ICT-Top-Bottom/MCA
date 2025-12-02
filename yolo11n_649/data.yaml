@@ -1,8 +1,0 @@
-names:
-- fully
-- empty
-- combined
-nc: 3
-path: /content/MCA/dataset
-train: images/train
-val: images/val

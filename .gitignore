@@ -22,3 +22,7 @@ yolo11s_results/
 # Image labeling workspace
 labeledImage/
 deleteImage/
+
+# Organized folders
+past_trainings/
+scripts/
