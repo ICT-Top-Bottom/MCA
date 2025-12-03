@@ -1,0 +1,22 @@
+{
+  "model": "YOLO11s CCTV Augmented",
+  "date": "2025-12-03 16:17:26",
+  "objective": "Improve CCTV angle detection with enhanced augmentation",
+  "changes": {
+    "degrees": 15.0,
+    "perspective": 0.0005,
+    "mixup": 0.15,
+    "hsv_h": 0.02,
+    "hsv_s": 0.8,
+    "hsv_v": 0.5,
+    "optimizer": "AdamW",
+    "lr0": 0.001
+  },
+  "metrics": {
+    "mAP50": 0.9290800619650555,
+    "mAP50-95": 0.689193564552093,
+    "precision": 0.9162024844687866,
+    "recall": 0.9112138337802586
+  },
+  "improvement_percent": -16.3396984034847
+}
