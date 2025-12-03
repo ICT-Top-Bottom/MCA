@@ -1,11 +1,14 @@
 {
   "model": "YOLO11s CCTV Augmented",
-  "date": "2025-12-03 16:17:26",
-  "objective": "Improve CCTV angle detection with enhanced augmentation",
+  "date": "2025-12-03 16:20:53",
+  "objective": "Improve CCTV angle detection with larger model and enhanced augmentation",
+  "model_size": "9.4M params (vs 2.6M in YOLO11n)",
   "changes": {
+    "model": "YOLO11s",
+    "batch": 6,
     "degrees": 15.0,
     "perspective": 0.0005,
-    "mixup": 0.15,
+    "mixup": 0.0,
     "hsv_h": 0.02,
     "hsv_s": 0.8,
     "hsv_v": 0.5,
