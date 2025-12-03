@@ -26,3 +26,7 @@ deleteImage/
 # Organized folders
 past_trainings/
 scripts/
+
+# SAM models (too large for GitHub)
+sam_b.pt
+testSAM/

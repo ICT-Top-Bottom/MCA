@@ -14,7 +14,11 @@
       "Bash(cat:*)",
       "Bash(git rm:*)",
       "Bash(git add:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(timeout 120 tail:*)",
+      "Bash(timeout:*)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)"
     ],
     "deny": [],
     "ask": []
