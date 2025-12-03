@@ -18,7 +18,9 @@
       "Bash(timeout 120 tail:*)",
       "Bash(timeout:*)",
       "Bash(dir:*)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(git reset:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
