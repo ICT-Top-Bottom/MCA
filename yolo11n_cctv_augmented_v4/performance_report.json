@@ -1,0 +1,26 @@
+{
+  "model": "YOLO11n CCTV Augmented v4",
+  "date": "2025-12-04 05:29:10",
+  "objective": "v2 base + improve general detection (keep Combined)",
+  "v3_problems": {
+    "combined_misclassification": "Combined \u2192 Fully",
+    "mixup_interference": "0.05 hurt Combined learning"
+  },
+  "v4_strategy": {
+    "copy_paste": "0.3 \u2192 0.5 (Combined focus)",
+    "mixup": "0.0 (removed)",
+    "close_mosaic": "10 \u2192 5",
+    "hsv_v": "0.55 (middle)",
+    "batch": "12 \u2192 16",
+    "box_loss": "7.5 \u2192 10.0",
+    "scale": "0.9 (kept)"
+  },
+  "metrics": {
+    "mAP50": 0.8738148758387677,
+    "mAP50-95": 0.5300163391460149,
+    "precision": 0.8986807685251312,
+    "recall": 0.8571926158133055
+  },
+  "improvement_from_v1_percent": -24.713588189486522,
+  "improvement_from_v2_percent": -22.284994260115127
+}
