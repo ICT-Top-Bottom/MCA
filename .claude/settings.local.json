@@ -23,7 +23,8 @@
       "Bash(git commit:*)",
       "Bash(for class in 0 1 2)",
       "Bash(do echo 'Class $class:')",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(pip install:*)"
     ],
     "deny": [],
     "ask": []
