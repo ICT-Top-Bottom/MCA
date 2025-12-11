@@ -1,0 +1,26 @@
+{
+  "model": "Baseline: YOLO11n (No Tuning)",
+  "date": "2025-12-11 14:30:01",
+  "objective": "Establish baseline performance with default YOLO11n",
+  "strategy": "No hyperparameter tuning, default augmentation",
+  "config": {
+    "epochs": 100,
+    "batch": 16,
+    "imgsz": 512,
+    "device": "[0, 1]",
+    "patience": 20
+  },
+  "metrics": {
+    "mAP50": 0.9621301172686719,
+    "mAP50-95": 0.8220446917878238,
+    "precision": 0.9284838417961215,
+    "recall": 0.9260198175098339
+  },
+  "dataset": {
+    "train": 318,
+    "valid": 79,
+    "total": 397,
+    "train_ratio": "80.1%",
+    "valid_ratio": "19.9%"
+  }
+}
