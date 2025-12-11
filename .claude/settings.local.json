@@ -24,7 +24,9 @@
       "Bash(for class in 0 1 2)",
       "Bash(do echo 'Class $class:')",
       "Bash(done)",
-      "Bash(pip install:*)"
+      "Bash(pip install:*)",
+      "Bash(for file in roboflow/train/labels/*.txt)",
+      "Bash(do awk '{print NF}' \"$file\")"
     ],
     "deny": [],
     "ask": []
