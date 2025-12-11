@@ -1,8 +1,0 @@
-names:
-- fully
-- empty
-- combined
-nc: 3
-path: /kaggle/working/MCA/MCA/MCA/MCA/MCA/dataset
-train: images/train
-val: images/val
