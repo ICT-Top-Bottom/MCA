@@ -1,0 +1,45 @@
+{
+  "model": "Option A: YOLO11s-seg - Model Capacity Upgrade",
+  "date": "2025-12-12 14:41:04",
+  "objective": "Improve small object detection and reduce Combined/Fully misclassification",
+  "strategy": "Upgrade to larger model + higher resolution + segmentation-specific tuning",
+  "improvements": [
+    "YOLO11n-seg \u2192 YOLO11s-seg (\ub354 \ud070 capacity)",
+    "1024px \u2192 1280px (\uc791\uc740 \uac1d\uccb4 \ud0d0\uc9c0)",
+    "overlap_mask=True (\uacb9\uce58\ub294 \ub9c8\uc2a4\ud06c)",
+    "close_mosaic=10 (fine-tuning)",
+    "cls=0.5 (\ubd84\ub958 \uac15\ud654)",
+    "epochs=200 (\uae34 \ud559\uc2b5)"
+  ],
+  "config": {
+    "model": "yolo11s-seg",
+    "epochs": 200,
+    "batch": 8,
+    "imgsz": 1280,
+    "device": "[0, 1]",
+    "patience": 40,
+    "multi_scale": true,
+    "overlap_mask": true,
+    "close_mosaic": 10,
+    "mask_ratio": 4,
+    "cls": 0.5,
+    "box": 7.5
+  },
+  "metrics": {
+    "box_mAP50": 0.9819,
+    "box_mAP50-95": 0.7344482619897549,
+    "mask_mAP50": 0.9793297435897436,
+    "mask_mAP50-95": 0.6871140286056698,
+    "precision": 0.9717109151526536,
+    "recall": 0.9609830444830796
+  },
+  "baseline_comparison": {
+    "baseline_yolo11n_seg": 0.7899,
+    "improvement_percent": -7.02
+  },
+  "dataset": {
+    "train": 316,
+    "valid": 78,
+    "total": 394
+  }
+}
