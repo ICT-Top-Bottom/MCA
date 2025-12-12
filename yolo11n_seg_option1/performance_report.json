@@ -1,0 +1,33 @@
+{
+  "model": "Option 1: YOLO11n-seg (Gradual Upgrade + Segmentation)",
+  "date": "2025-12-12 04:40:15",
+  "objective": "Gradual upgrade from baseline with segmentation",
+  "strategy": "YOLO11n-seg + batch 24 + imgsz 640 + epochs 150 + polygon labels",
+  "config": {
+    "epochs": 150,
+    "batch": 24,
+    "imgsz": 640,
+    "device": "[0, 1]",
+    "patience": 50,
+    "task": "segment"
+  },
+  "metrics": {
+    "box_mAP50": 0.9830141060600831,
+    "box_mAP50-95": 0.8465110366997124,
+    "mask_mAP50": 0.9733217757311063,
+    "mask_mAP50-95": 0.7374201477492939,
+    "precision": 0.9656189405830441,
+    "recall": 0.9391229223058971
+  },
+  "baseline_comparison": {
+    "baseline_mAP50-95": 0.822,
+    "improvement_percent": 2.98
+  },
+  "dataset": {
+    "train": 316,
+    "valid": 78,
+    "total": 394,
+    "train_ratio": "80.2%",
+    "valid_ratio": "19.8%"
+  }
+}
