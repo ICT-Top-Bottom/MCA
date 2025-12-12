@@ -23,17 +23,17 @@ class ShoppingCartDetectorGUI:
         self.root.geometry("1200x800")
         self.root.configure(bg='#2b2b2b')
 
-        # 모델 로드
-        print("모델 로딩...")
-        self.model = YOLO('yolo11n_cctv_augmented/best.pt')
+        # 모델 로드 (세그멘테이션 모델)
+        print("세그멘테이션 모델 로딩...")
+        self.model = YOLO('yolo11n_seg_cctv_augmented/best.pt')
         print("[OK] 모델 로드 완료")
 
-        # 클래스 정보
-        self.class_names = {0: 'fully', 1: 'empty', 2: 'combined'}
+        # 클래스 정보 (Roboflow 형식)
+        self.class_names = {0: 'combined', 1: 'empty', 2: 'fully'}
         self.class_colors = {
-            0: (0, 255, 0),    # fully: 초록
+            0: (255, 0, 0),    # combined: 파랑
             1: (0, 0, 255),    # empty: 빨강
-            2: (255, 0, 0)     # combined: 파랑
+            2: (0, 255, 0)     # fully: 초록
         }
 
         # 상태 변수
@@ -525,7 +525,14 @@ class ShoppingCartDetectorGUI:
                 if self.frame_count % detect_interval == 0:
                     start_time = time.time()
 
-                    results = self.model.predict(frame, conf=0.25, iou=0.45, verbose=False)
+                    # 세그멘테이션 추론
+                    results = self.model.predict(
+                        frame,
+                        conf=0.25,
+                        iou=0.45,
+                        verbose=False,
+                        retina_masks=True
+                    )
                     annotated_frame, detections = self.draw_detections(frame, results)
 
                     last_detections = detections
@@ -596,37 +603,51 @@ class ShoppingCartDetectorGUI:
                 time.sleep(0.01)
 
     def draw_detections(self, frame, results):
-        """프레임에 탐지 결과 그리기"""
+        """프레임에 탐지 결과 그리기 (세그멘테이션 마스크 + 바운딩 박스)"""
         annotated_frame = frame.copy()
         detections = {'fully': 0, 'empty': 0, 'combined': 0}
 
+        # 마스크 오버레이용
+        mask_overlay = annotated_frame.copy()
+
         for result in results:
             boxes = result.boxes
+            masks = result.masks
 
             if boxes is not None and len(boxes) > 0:
-                for box in boxes:
+                for idx, box in enumerate(boxes):
                     x1, y1, x2, y2 = map(int, box.xyxy[0].cpu().numpy())
                     conf = float(box.conf[0])
                     cls = int(box.cls[0])
 
                     color = self.class_colors[cls]
 
+                    # 세그멘테이션 마스크 그리기
+                    if masks is not None and idx < len(masks):
+                        mask = masks[idx].data[0].cpu().numpy()
+                        mask_resized = cv2.resize(mask, (frame.shape[1], frame.shape[0]))
+                        mask_bool = mask_resized > 0.5
+                        mask_overlay[mask_bool] = color
+
                     # 바운딩 박스
-                    cv2.rectangle(annotated_frame, (x1, y1), (x2, y2), color, 3)
+                    cv2.rectangle(annotated_frame, (x1, y1), (x2, y2), color, 2)
 
                     # 라벨
                     label = f"{self.class_names[cls]} {conf:.2f}"
 
                     # 배경
-                    (w, h), _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.8, 2)
-                    cv2.rectangle(annotated_frame, (x1, y1 - 30), (x1 + w + 10, y1), color, -1)
+                    (w, h), _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.6, 2)
+                    cv2.rectangle(annotated_frame, (x1, y1 - 25), (x1 + w + 10, y1), color, -1)
 
                     # 텍스트
-                    cv2.putText(annotated_frame, label, (x1 + 5, y1 - 10),
-                               cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
+                    cv2.putText(annotated_frame, label, (x1 + 5, y1 - 8),
+                               cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
 
                     # 통계
                     detections[self.class_names[cls]] += 1
+
+        # 마스크 오버레이 합성 (투명도 40%)
+        annotated_frame = cv2.addWeighted(annotated_frame, 0.6, mask_overlay, 0.4, 0)
 
         return annotated_frame, detections
 
