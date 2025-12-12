@@ -1,0 +1,44 @@
+{
+  "model": "Option 1: YOLO11n-seg CCTV Augmented (Segmentation)",
+  "date": "2025-12-12 05:35:48",
+  "objective": "Apply proven CCTV augmentation to segmentation model",
+  "strategy": "YOLO11n-seg + CCTV augmented settings + multi-scale + polygon labels",
+  "config": {
+    "epochs": 150,
+    "batch": 12,
+    "imgsz": 1024,
+    "device": "[0, 1]",
+    "patience": 30,
+    "task": "segment",
+    "multi_scale": true,
+    "optimizer": "AdamW",
+    "lr0": 0.001
+  },
+  "augmentation": {
+    "mixup": 0.15,
+    "degrees": 15.0,
+    "perspective": 0.0005,
+    "hsv_h": 0.02,
+    "hsv_s": 0.8,
+    "hsv_v": 0.5
+  },
+  "metrics": {
+    "box_mAP50": 0.9783350999326436,
+    "box_mAP50-95": 0.7898663900403436,
+    "mask_mAP50": 0.9766477065176548,
+    "mask_mAP50-95": 0.7221333956421155,
+    "precision": 0.9467411528712919,
+    "recall": 0.9408495234022306
+  },
+  "baseline_comparison": {
+    "baseline_mAP50-95": 0.822,
+    "improvement_percent": -3.91
+  },
+  "dataset": {
+    "train": 316,
+    "valid": 78,
+    "total": 394,
+    "train_ratio": "80.2%",
+    "valid_ratio": "19.8%"
+  }
+}
