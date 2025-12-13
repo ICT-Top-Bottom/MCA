@@ -1,0 +1,8 @@
+names:
+- combined_cart
+- empty_cart
+- fully_cart
+nc: 3
+path: /kaggle/working/MCA/roboflow
+train: train/images
+val: valid/images
