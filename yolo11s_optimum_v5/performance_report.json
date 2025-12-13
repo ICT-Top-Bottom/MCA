@@ -1,12 +1,12 @@
 {
-  "model": "YOLO11s-seg Optimum v5 - Balanced Approach",
-  "date": "2025-12-12 15:38:04",
+  "model": "yolo11s_v6.2_hard_augmentation",
+  "date": "2025-12-13 02:56:43",
   "objective": "Minimize False Positives while maintaining small object detection",
-  "strategy": "Conservative augmentation + close_mosaic fine-tuning + 768px resolution",
+  "strategy": "Conservative augmentation + close_mosaic fine-tuning + 640px resolution",
   "key_improvements": [
     "Mixup OFF (\uce74\ud2b8 \uacb9\uce68 \ud63c\ub3d9 \uc81c\uac70) \u2b50\u2b50\u2b50",
     "close_mosaic=20 (\uc2e4\uc81c \uc774\ubbf8\uc9c0 fine-tuning) \u2b50\u2b50\u2b50",
-    "768px resolution (\uade0\ud615\uc7a1\ud78c \ud574\uc0c1\ub3c4) \u2b50",
+    "640px resolution (\uade0\ud615\uc7a1\ud78c \ud574\uc0c1\ub3c4) \u2b50",
     "\ubcf4\uc218\uc801 \uc99d\uac15 (degrees=10, scale=0.4) \u2b50",
     "flipud OFF (CCTV \ud658\uacbd \ud2b9\ud654)"
   ],
@@ -31,16 +31,16 @@
     "flipud": 0.0
   },
   "metrics": {
-    "box_mAP50": 0.9759133333333333,
-    "box_mAP50-95": 0.8541495552160744,
-    "mask_mAP50": 0.9569269021913757,
-    "mask_mAP50-95": 0.7601621615094448,
-    "precision": 0.9888136255287653,
-    "recall": 0.9601702373786761
+    "box_mAP50": 0.9782000000000001,
+    "box_mAP50-95": 0.8365750849707027,
+    "mask_mAP50": 0.9665928667823405,
+    "mask_mAP50-95": 0.7442282527511339,
+    "precision": 0.9717447977927783,
+    "recall": 0.9654832402805406
   },
   "baseline_comparison": {
     "baseline_yolo11n_seg": 0.7899,
-    "improvement_percent": 8.13
+    "improvement_percent": 5.91
   },
   "dataset": {
     "train": 316,
