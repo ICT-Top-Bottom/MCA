@@ -25,7 +25,7 @@ class ShoppingCartDetectorGUI:
 
         # 모델 로드 (세그멘테이션 모델)
         print("세그멘테이션 모델 로딩...")
-        self.model = YOLO('yolo11s_optimum_v5/best.pt')
+        self.model = YOLO('yolo11s_v7_highres_cls_focus/best.pt')
         print("[OK] 모델 로드 완료")
 
         # 클래스 정보 (Roboflow 형식)
