@@ -19,13 +19,13 @@ print("  3. 결과 비교: 기본 추론 vs SAHI 추론")
 print("="*70)
 
 # 모델 경로 (학습 완료된 모델로 변경)
-MODEL_PATH = 'yolo11s_optimum_v5/best.pt'  # 학습 완료 후 경로 확인
+MODEL_PATH = 'yolo11s_optimum_v5/best.pt'  # ✅ 확인됨
 
 # SAHI 모델 로드
 detection_model = AutoDetectionModel.from_pretrained(
     model_type='yolov8',  # YOLO11도 yolov8 타입으로 동작
     model_path=MODEL_PATH,
-    confidence_threshold=0.40,  # 높은 threshold ⭐
+    confidence_threshold=0.55,  # 0.40 → 0.55 (더 엄격하게) ⭐⭐⭐
     device='cuda:0'
 )
 
@@ -55,10 +55,10 @@ for img_path in sorted(list(test_images.glob('*.jpg')) + list(test_images.glob('
     result = get_sliced_prediction(
         str(img_path),
         detection_model,
-        slice_height=512,      # 슬라이스 크기 (작을수록 정밀)
-        slice_width=512,
-        overlap_height_ratio=0.2,  # 겹침 비율
-        overlap_width_ratio=0.2,
+        slice_height=640,      # 512 → 640 (더 크게, 오탐 줄이기) ⭐
+        slice_width=640,
+        overlap_height_ratio=0.3,  # 0.2 → 0.3 (겹침 더 많이)
+        overlap_width_ratio=0.3,
         verbose=0
     )
 

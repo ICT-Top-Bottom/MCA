@@ -8,7 +8,7 @@ import cv2
 from collections import Counter
 
 # 모델 로드 (학습 완료된 모델로 변경)
-MODEL_PATH = 'yolo11s_optimum_v5/best.pt'
+MODEL_PATH = 'yolo11s_optimum_v5/best.pt'  # ✅ 확인됨
 
 print("="*70)
 print("Confidence Threshold 비교 테스트")
