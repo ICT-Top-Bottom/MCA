@@ -1,0 +1,50 @@
+{
+  "model": "yolo11s_v6.2_hard_augmentation",
+  "date": "2025-12-13 09:21:54",
+  "objective": "Minimize False Positives while maintaining small object detection",
+  "strategy": "Conservative augmentation + close_mosaic fine-tuning + 640px resolution",
+  "key_improvements": [
+    "Mixup OFF (\uce74\ud2b8 \uacb9\uce68 \ud63c\ub3d9 \uc81c\uac70) \u2b50\u2b50\u2b50",
+    "close_mosaic=20 (\uc2e4\uc81c \uc774\ubbf8\uc9c0 fine-tuning) \u2b50\u2b50\u2b50",
+    "640px resolution (\uade0\ud615\uc7a1\ud78c \ud574\uc0c1\ub3c4) \u2b50",
+    "\ubcf4\uc218\uc801 \uc99d\uac15 (degrees=10, scale=0.4) \u2b50",
+    "flipud OFF (CCTV \ud658\uacbd \ud2b9\ud654)"
+  ],
+  "next_steps": [
+    "SAHI (Slicing Aided Hyper Inference) \uc801\uc6a9",
+    "conf=0.40~0.45\ub85c \ucd94\ub860 (\uc624\ud0d0 \uc81c\uac70)",
+    "testImage\ub85c \uc2e4\uc804 \ud14c\uc2a4\ud2b8"
+  ],
+  "config": {
+    "model": "yolo11s-seg",
+    "epochs": 200,
+    "batch": 24,
+    "imgsz": 768,
+    "device": "[0, 1]",
+    "patience": 50,
+    "optimizer": "auto",
+    "overlap_mask": true,
+    "close_mosaic": 20,
+    "mixup": 0.0,
+    "degrees": 10.0,
+    "scale": 0.4,
+    "flipud": 0.0
+  },
+  "metrics": {
+    "box_mAP50": 0.9782000000000001,
+    "box_mAP50-95": 0.8365750849707027,
+    "mask_mAP50": 0.9665928667823405,
+    "mask_mAP50-95": 0.7442282527511339,
+    "precision": 0.9717447977927783,
+    "recall": 0.9654832402805406
+  },
+  "baseline_comparison": {
+    "baseline_yolo11n_seg": 0.7899,
+    "improvement_percent": 5.91
+  },
+  "dataset": {
+    "train": 316,
+    "valid": 78,
+    "total": 394
+  }
+}
