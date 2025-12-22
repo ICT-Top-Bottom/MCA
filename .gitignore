@@ -23,9 +23,6 @@ yolo11s_results/
 labeledImage/
 deleteImage/
 
-# Organized folders
-past_trainings/
-
 # SAM models (too large for GitHub)
 sam_b.pt
 testSAM/
