@@ -55,28 +55,6 @@
 | **윤태웅** | 모델 학습 및 실험 설계 |
 | **박재형** | 데이터 수집 및 라벨링 |
 
-## 실행 방법
-
-### 1. 저장소 클론
-```bash
-git clone https://github.com/ICT-Top-Bottom/MCA.git
-cd MCA
-```
-
-### 2. 필수 라이브러리 설치
-```bash
-pip install ultralytics opencv-python numpy
-```
-
-### 3. 추론 실행
-```bash
-# Baseline 모델 (YOLO11n)
-python batch_inference_advanced.py baseline_yolo11n
-
-# 최종 모델 (YOLO11s-seg)
-python batch_inference_advanced.py yolo11s_seg_option_a
-```
-
 ## 논문
 
 연구 논문은 `assets` 폴더에서 확인하실 수 있습니다.
@@ -86,11 +64,3 @@ python batch_inference_advanced.py yolo11s_seg_option_a
 프로젝트에 대한 문의사항은 아래 이메일로 연락주세요:
 
 **윤태웅** - taewoong25@hanyang.ac.kr
-
----
-
-<div align="center">
-
-**© 2025 YOLO11 Shopping Cart Detection Project. All rights reserved.**
-
-</div>
