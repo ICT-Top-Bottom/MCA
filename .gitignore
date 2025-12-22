@@ -1,28 +1,2 @@
-runs/
-*.cache
-yolo11n.pt
-
-# Training datasets
-dataset/
-runs/
-backup_old/
-
-# Python
-__pycache__/
-*.pyc
-*.pyo
-
-# Temporary files
-temp_restore/
-*.tmp
-
-# Old results
-yolo11s_results/
-
-# Image labeling workspace
-labeledImage/
-deleteImage/
-
 # SAM models (too large for GitHub)
-sam_b.pt
 testSAM/
