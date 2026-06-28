@@ -16,8 +16,8 @@
 
 ### 주요 성과
 
-- **Baseline 모델 (YOLO11n)**: 394장 데이터셋으로 mAP50-95 0.822 달성
-- **최종 모델 (YOLO11s-seg)**: Precision 4.7%, Recall 3.8% 향상
+- **Baseline 모델 (YOLO11n)**: 394장 데이터셋으로 mAP50 0.962 달성
+- **최종 모델 (YOLO11s-seg)**: 고해상도(1280px) 적용으로 Precision 3.4%, Recall 3.5% 향상
 - **Segmentation 성능**: mask_mAP50 0.979로 정밀한 윤곽선 추출
 - **실전 검증**: CCTV 테스트 영상에서 Baseline 대비 원거리 카트 탐지 능력 향상
 
