@@ -29,7 +29,6 @@
 
 ## 관련 저장소
 
-- **메인 프로젝트**: [https://github.com/ICT-Top-Bottom/MCA](https://github.com/ICT-Top-Bottom/MCA)
 - **Appendix**: [https://github.com/ICT-Top-Bottom/MCA-Appendix](https://github.com/ICT-Top-Bottom/MCA-Appendix)
 
 ## 기술 스택
